@@ -30,7 +30,7 @@ EXEC dbms_system.get_env('ORACLE_HOME', :OHM) ;
 PRINT OHM
 ```
 
-Una vez localizado tu direcotrio ORACLE_HOMEdb tienes dos opciones 
+Una vez localizado tu direcotrio ORACLE_HOMEdb tienes dos opciones: 
 1.-copia la ruta y pegala en la barra de navegación del explorador de archivos agregandole la ruta de \network\admin. 
 2.-copia la ruta y pegala en la terminal añadiendo los subdirectorios \network\admin y usa el comando 
 ```
@@ -44,6 +44,11 @@ ENCRYPTION_WALLET_LOCATION=
    (METHOD_DATA=
     (DIRECTORY=path_to_keystore)))
 ```
+
+
+
+
+
 
 
 # Keystore Externa (Hardware)

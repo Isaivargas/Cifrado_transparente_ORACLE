@@ -12,7 +12,7 @@ El cifrado de datos transparente de Oracle admite dos modos de cifrado: el cifra
 #### Configuración para sistema operativo Windows 10
 ### Paso 1: Establece el tipo de almacén de claves de hardware en el archivo sqlnet.ora
 
-Nota:para configurar un almacén de claves de hardware, debes modificar el archivo sqlnet.ora. que se encuentra por default en el directório ORACLE_HOMEdb,para poder encontrar la ruta del directório ejecuta los siguientes comandos en la terminal:
+para configurar un almacén de claves de hardware, debes modificar el archivo sqlnet.ora. que se encuentra por default en el directório ORACLE_HOMEdb,para poder encontrar la ruta del directório ejecuta los siguientes comandos en la terminal:
 
 ```
 sqlplus / as sysdba  

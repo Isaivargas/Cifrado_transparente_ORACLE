@@ -1,4 +1,5 @@
 # Cifrado_transparente_ORACLE
+El cifrado de datos transparente de Oracle se usa en situaciones en las que es necesario cifrar información confidencial por si un tercero obtiene los archivos de datos y las copias de seguridad, o cuando es necesario abordar problemas de conformidad normativa relacionados con la seguridad.
 
 ## Tipos de cifrado 
 El cifrado de datos transparente de Oracle admite dos modos de cifrado: el cifrado de espacios de tabla de TDE y el cifrado de columnas de TDE. El cifrado de espacios de tabla de TDE se utiliza para cifrar tablas de aplicaciones completas. El cifrado de columnas de TDE se utiliza para cifrar elementos de datos individuales que contienen información confidencial. También es posible aplicar una solución de cifrado híbrida que utilice tanto el cifrado de espacios de tabla como el cifrado de columnas de TDE.

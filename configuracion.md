@@ -32,6 +32,15 @@ PRINT OHM
 
 Una vez localizado tu direcotrio ORACLE_HOMEdb copia la ruta y pegala en la barra de navegación del explorador de archivos agregandole la ruta de \network\admin.
 
+Para crear un almacén de claves de software en un sistema de archivos normal, usa el siguiente formato cuando edites el archivo sqlnet.ora
+```
+ENCRYPTION_WALLET_LOCATION=
+ (SOURCE=
+  (METHOD=FILE)
+   (METHOD_DATA=
+    (DIRECTORY=path_to_keystore)))
+```
+
 
 # Keystore Externa (Hardware)
 #### Configuración para sistema operativo Windows 10

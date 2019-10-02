@@ -9,9 +9,10 @@ Oracle Database utiliza mecanismos de autenticación, autorización y auditoría
 El cifrado de datos transparente de Oracle admite dos modos de cifrado: el cifrado de espacios de tabla de TDE y el cifrado de columnas de TDE. El cifrado de espacios de tabla de TDE se utiliza para cifrar tablas de aplicaciones completas. El cifrado de columnas de TDE se utiliza para cifrar elementos de datos individuales que contienen información confidencial. También es posible aplicar una solución de cifrado híbrida que utilice tanto el cifrado de espacios de tabla como el cifrado de columnas de TDE.
 
 # Keystore Externa (Hardware)
+#### Configuración para sistema operativo Windows 10
 ### Paso 1: Establece el tipo de almacén de claves de hardware en el archivo sqlnet.ora
 
-Nota:para configurar un almacén de claves de hardware, debes modificar el archivo sqlnet.ora. que se encuentra por default en el directório ORACLE_HOMEdb.
+Nota:para configurar un almacén de claves de hardware, debes modificar el archivo sqlnet.ora. que se encuentra por default en el directório ORACLE_HOMEdb,para poder encontrar la ruta del directório ejecuta los siguientes comandos en la terminal:
 
 ```
 sqlplus / as sysdba  

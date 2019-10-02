@@ -30,8 +30,12 @@ EXEC dbms_system.get_env('ORACLE_HOME', :OHM) ;
 PRINT OHM
 ```
 
-Una vez localizado tu direcotrio ORACLE_HOMEdb copia la ruta y pegala en la barra de navegación del explorador de archivos agregandole la ruta de \network\admin.
-
+Una vez localizado tu direcotrio ORACLE_HOMEdb tienes dos opciones 
+1.-copia la ruta y pegala en la barra de navegación del explorador de archivos agregandole la ruta de \network\admin. 
+2.-copia la ruta y pegala en la terminal añadiendo los subdirectorios \network\admin y usa el comando 
+```
+notepad sqlnet.ora
+```
 Para crear un almacén de claves de software en un sistema de archivos normal, usa el siguiente formato cuando edites el archivo sqlnet.ora
 ```
 ENCRYPTION_WALLET_LOCATION=

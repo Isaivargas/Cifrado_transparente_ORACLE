@@ -48,13 +48,23 @@ ENCRYPTION_WALLET_LOCATION=
    (METHOD_DATA=
     (DIRECTORY=path_to_keystore)))
 ```
-### Paso 3. Después de haber especificado una ubicación de directorio para el almacén de claves de software, puede crear el almacén de claves.
+### Paso 3. Después de haber especificado una ubicación de directorio para el almacén de claves de software,puedes crear el almacén de claves.
 
+-Almacenes de claves de software basados en contraseña
 
+-Almacenes de claves de software de inicio de sesión automático
 
+-Almacenes de claves de software de inicio de sesión automático local
 
+Inicia sesión en la instancia de la base de datos como SYSKM 
 
-
+```
+$ sqlplus / as syskm
+```
+puedes verificar tu usuario con el siguiente comando
+```
+show user
+```
 
 
 # Keystore Externa (Hardware)

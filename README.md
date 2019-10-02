@@ -10,9 +10,8 @@ El cifrado de datos transparente de Oracle admite dos modos de cifrado: el cifra
 
 # Keystore Externa (Hardware)
 Paso 1: establece el tipo de almacén de claves de hardware en el archivo sqlnet.ora
-Nota:para configurar un almacén de claves de hardware, debes modificar el archivo sqlnet.ora.
 
-
+Nota:para configurar un almacén de claves de hardware, debes modificar el archivo sqlnet.ora. que se encuentra por default en el directório ORACLE_HOMEdb.
 
 ```
 sqlplus / as sysdba  
@@ -29,3 +28,13 @@ EXEC dbms_system.get_env('ORACLE_HOME', :OHM) ;
 ```
 PRINT OHM
 ```
+Una vez localizado tu direcotrio ORACLE_HOMEdb
+utiliza la siguiente configuración en el archivo sqlnet.ora para definir el tipo de almacén de claves de hardware, que es HSM(Hardware Security Model).
+
+```
+ENCRYPTION_WALLET_LOCATION=
+ (SOURCE=
+  (METHOD=HSM))
+```
+
+

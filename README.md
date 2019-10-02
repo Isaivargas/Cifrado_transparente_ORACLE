@@ -1,1 +1,1 @@
-# keystoreExterna_Oracle
+# keystore_Oracle

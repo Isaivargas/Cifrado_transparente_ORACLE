@@ -73,15 +73,22 @@ Asegurate de guardar bien tu contraseña ya que la utilizaremos posteriormente.
 ```
 SQL> ADMINISTER KEY MANAGEMENT CREATE KEYSTORE 'C:path/Keystore' IDENTIFIED BY "password";
 ```
-Debes de tener como respuesta un mensaje de
+Debes de tener como respuesta un mensaje de ...
 ```
 almacen de claves modificado
 ```
-Despúes de que corras el comando anterior se habra creado un archivo llamado 
+Despúes de que corras el comando anterior se habra creado un archivo llamado. 
 
 ```
 ewallet
 ```
+
+OPCIONALMENTE puedes crear un Auto-login para evitar el acceso manual cada que quieras hacer algún cambio
+
+```
+AUTO_LOGIN KEYSTORE FROM KEYSTORE 'keystore_location' IDENTIFIED BY password
+```
+
 ### Paso 4:Abre la keystore
 ```
 ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY "password";

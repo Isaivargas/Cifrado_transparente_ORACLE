@@ -86,7 +86,7 @@ ewallet
 OPCIONALMENTE puedes crear un Auto-login para evitar el acceso manual cada que quieras hacer algún cambio
 
 ```
-AUTO_LOGIN KEYSTORE FROM KEYSTORE 'keystore_location' IDENTIFIED BY password
+ADMINISTER KEY MANAGEMENT CREATE LOCAL AUTO_LOGIN KEYSTORE FROM KEYSTORE 'keystore_location' IDENTIFIED BY password;
 ```
 
 ### Paso 4:Abre la keystore

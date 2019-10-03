@@ -50,7 +50,7 @@ ENCRYPTION_WALLET_LOCATION=
    (METHOD_DATA=
     (DIRECTORY=path_to_keystore)))
 ```
-### Paso 3. Después de haber especificado una ubicación de directorio para el almacén de claves de software,puedes crear el almacén de claves.
+### Paso 3: Después de haber especificado una ubicación de directorio para el almacén de claves de software,puedes crear el almacén de claves.
 
 -Almacenes de claves de software basados en contraseña
 
@@ -61,7 +61,7 @@ ENCRYPTION_WALLET_LOCATION=
 Inicia sesión en la instancia de la base de datos como SYSKM 
 
 ```
-$ sqlplus / as syskm
+sqlplus sys/password as sysdba
 ```
 puedes verificar tu usuario con el siguiente comando
 ```
@@ -73,11 +73,20 @@ Asegurate de guardar bien tu contraseña ya que la utilizaremos posteriormente.
 ```
 SQL> ADMINISTER KEY MANAGEMENT CREATE KEYSTORE 'C:path/Keystore' IDENTIFIED BY "password";
 ```
+Debes de tener como respuesta un mensaje de
+```
+almacen de claves modificado
+```
 Despúes de que corras el comando anterior se habra creado un archivo llamado 
 
 ```
 ewallet
 ```
+### Paso 4:Abre la keystore
+```
+ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY "password";
+```
+
 
 # Keystore Externa (Hardware)
 #### Configuración para sistema operativo Windows 10

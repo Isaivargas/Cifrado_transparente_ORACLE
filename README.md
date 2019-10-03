@@ -33,7 +33,9 @@ PRINT OHM
 ```
 
 Una vez localizado tu direcotrio ORACLE_HOMEdb tienes dos opciones: 
+
 1.-copia la ruta y pegala en la barra de navegación del explorador de archivos agregandole la ruta de \network\admin. 
+
 2.-copia la ruta y pegala en la terminal añadiendo los subdirectorios \network\admin y usa el comando 
 ```
 notepad sqlnet.ora
@@ -65,7 +67,17 @@ puedes verificar tu usuario con el siguiente comando
 ```
 show user
 ```
+Usa el siguiente comando para crear tu keystore :D
+remplaza 'path/keystore' con tu ruta del directorio donde deseas crear tu key store
+Asegurate de guardar bien tu contraseña ya que la utilizaremos posteriormente.
+```
+SQL> ADMINISTER KEY MANAGEMENT CREATE KEYSTORE 'C:path/Keystore' IDENTIFIED BY "password";
+```
+Despúes de que corras el comando anterior se habra creado un archivo llamado 
 
+```
+ewallet
+```
 
 # Keystore Externa (Hardware)
 #### Configuración para sistema operativo Windows 10

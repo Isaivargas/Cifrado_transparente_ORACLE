@@ -94,36 +94,3 @@ ADMINISTER KEY MANAGEMENT CREATE LOCAL AUTO_LOGIN KEYSTORE FROM KEYSTORE 'keysto
 ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY "password";
 ```
 
-
-# Keystore Externa (Hardware)
-#### Configuración para sistema operativo Windows 10
-### Paso 1: Establece el tipo de almacén de claves de hardware en el archivo sqlnet.ora
-
-Para configurar un almacén de claves de hardware, debes modificar el archivo sqlnet.ora. que se encuentra por default en el directório ORACLE_HOMEdb\network\admin,para poder encontrar la ruta del directório ORACLE_HOMEdb ejecuta los siguientes comandos en la terminal:
-
-```
-sqlplus / as sysdba  
-```
-
-```
-var OHM varchar2(100); 
-```
-
-```
-EXEC dbms_system.get_env('ORACLE_HOME', :OHM) ; 
-```
-
-```
-PRINT OHM
-```
-Una vez localizado tu direcotrio ORACLE_HOMEdb copia la ruta y pegala en la barra de navegación del explorador de archivos agregandole la ruta de \network\admin.
-
-a continuación utiliza la siguiente configuración en el archivo sqlnet.ora para definir el tipo de almacén de claves de hardware, que es HSM(Hardware Security Model).
-
-```
-ENCRYPTION_WALLET_LOCATION=
- (SOURCE=
-  (METHOD=HSM))
-```
-
-

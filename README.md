@@ -44,11 +44,7 @@ Para crear un almacén de claves de software en un sistema de archivos , usa el 
 En el formato siguiente en la parte de DIRECTORY = sustituye path_to_keystore con tu ruta a tu directorio que creaste en el paso1.
 
 ```
-ENCRYPTION_WALLET_LOCATION=
- (SOURCE=
-  (METHOD=FILE)
-   (METHOD_DATA=
-    (DIRECTORY=path_to_keystore)))
+WALLET_ROOT=$ORACLE_BASE/admin/orcl/keystore
 ```
 ### Paso 3: Después de haber especificado una ubicación de directorio para el almacén de claves de software,puedes crear el almacén de claves.
 

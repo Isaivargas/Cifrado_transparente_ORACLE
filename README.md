@@ -38,9 +38,9 @@ Una vez localizado tu direcotrio ORACLE_HOMEdb tienes dos opciones:
 
 2.-copia la ruta y pegala en la terminal añadiendo los subdirectorios \dbs y usa el comando 
 ```
-notepad sqlnet.ora
+notepad init.ora
 ```
-Para crear un almacén de claves de software en un sistema de archivos , usa el siguiente formato cuando edites el archivo sqlnet.ora .
+Para crear un almacén de claves de software en un sistema de archivos , usa el siguiente formato cuando edites el archivo init.ora .
 En el formato siguiente en la parte de DIRECTORY = sustituye path_to_keystore con tu ruta a tu directorio que creaste en el paso1.
 
 ```

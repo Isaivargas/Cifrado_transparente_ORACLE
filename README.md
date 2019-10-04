@@ -13,7 +13,7 @@ Debes definir una ubicación para ello en el archivo sqlnet.ora. Hay un almacén
 ### Paso1: Crea un directorio para el almacen de claves(keystore) en alguna parte de tu elección dentro del directorio de oracle y copia la ruta a ese directorio ya que esa ruta la ocuparas en el paso 2 .
 
 ### Paso 2: Establece la ubicación del almacén de claves de software en el archivo sqlnet.ora
-para configurar un almacén de claves de software, debes modificar el archivo sqlnet.ora. que se encuentra por default en el directório ORACLE_HOMEdb\network\admin,para poder encontrar la ruta del directório ORACLE_HOMEdb ejecuta los siguientes comandos en la terminal:
+para configurar un almacén de claves de software, debes modificar el archivo sqlnet.ora. que se encuentra por default en el directório ORACLE_HOMEdb\admin,para poder encontrar la ruta del directório ORACLE_HOMEdb ejecuta los siguientes comandos en la terminal:
 #### Nota:Asegurate de que este directorio existe de antemano. Preferentemente, este directorio debe estar vacío.
 
 ```
@@ -34,9 +34,9 @@ PRINT OHM
 
 Una vez localizado tu direcotrio ORACLE_HOMEdb tienes dos opciones: 
 
-1.-copia la ruta y pegala en la barra de navegación del explorador de archivos agregandole la ruta de \network\admin. 
+1.-copia la ruta y pegala en la barra de navegación del explorador de archivos agregandole la ruta de \dbs. 
 
-2.-copia la ruta y pegala en la terminal añadiendo los subdirectorios \network\admin y usa el comando 
+2.-copia la ruta y pegala en la terminal añadiendo los subdirectorios \dbs y usa el comando 
 ```
 notepad sqlnet.ora
 ```

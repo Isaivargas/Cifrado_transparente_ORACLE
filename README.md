@@ -10,7 +10,7 @@ El cifrado de datos transparente de Oracle admite dos modos de cifrado: el cifra
 # Keystore (Software)
 #### Configuración para sistema operativo Windows 10
 Debes definir una ubicación para ello en el archivo sqlnet.ora. Hay un almacén de claves por base de datos, y la base de datos localiza este almacén de claves comprobando la ubicación del almacén de claves que define en el archivo sqlnet.ora.
-### Paso1: Crea un directorio para el almacen de claves(keystore) en alguna parte de tu elección dentro del directorio de oracle y copia la ruta a ese directorio ya que esa ruta la ocuparas en el paso 2 .
+### Paso1: Crea un directorio para tu wallet en alguna parte de tu elección dentro del directorio de oracle (preferentemente en admin) y copia la ruta a ese directorio ya que esa ruta la ocuparas en el paso 2 .
 
 ### Paso 2: Establece la ubicación del almacén de claves de software en el archivo sqlnet.ora
 para configurar un almacén de claves de software, debes modificar el archivo sqlnet.ora. que se encuentra por default en el directório ORACLE_HOMEdb\admin,para poder encontrar la ruta del directório ORACLE_HOMEdb ejecuta los siguientes comandos en la terminal:
@@ -41,11 +41,16 @@ Una vez localizado tu direcotrio ORACLE_HOMEdb tienes dos opciones:
 notepad init.ora
 ```
 Para crear un almacén de claves de software en un sistema de archivos , usa el siguiente formato cuando edites el archivo init.ora .
-En el formato siguiente en la parte de DIRECTORY = sustituye path_to_keystore con tu ruta a tu directorio que creaste en el paso1.
 
 ```
-WALLET_ROOT=$ORACLE_BASE/admin/orcl/keystore
+WALLET_ROOT=$ORACLE_BASE/admin/wallets
 ```
+Establece la ruta de tu wallet donde se almacenaran las llaves
+```
+alter system set wallet_root='/wallets' scope=spfile;
+```
+
+
 ### Paso 3: Después de haber especificado una ubicación de directorio para el almacén de claves de software,puedes crear el almacén de claves.
 
 -Almacenes de claves de software basados en contraseña

@@ -49,9 +49,20 @@ Establece la ruta de tu wallet donde se almacenaran las llaves
 ```
 alter system set wallet_root='/wallets' scope=spfile;
 ```
-
-
-### Paso 3: Después de haber especificado una ubicación de directorio para el almacén de claves de software,puedes crear el almacén de claves.
+Despuees de haber establecido tu ruta debes reiniciar la base de datos con los siguientes comandos
+```
+SHUTDOWN IMMEDIATE
+```
+Espera a que se apague esto podría tomar un tiempo dependiendo de las actividades en ejecución de tu base de datos
+y despues ejecuta el comando siguiente para iniciar de nuevo la base de datos..
+```
+STARTUP
+```
+### Paso 3:Establece el parámetro de inicialización dinámica TDE_CONFIGURATION para especificar el tipo de almacén de claves.
+```
+alter system set tde_configuration="keystore_configuration=file" scope=both;
+```
+### Paso 4: Después de haber especificado una ubicación de directorio para el almacén de claves de software,puedes crear el almacén de claves.
 
 -Almacenes de claves de software basados en contraseña
 
@@ -59,10 +70,13 @@ alter system set wallet_root='/wallets' scope=spfile;
 
 -Almacenes de claves de software de inicio de sesión automático local
 
-Inicia sesión en la instancia de la base de datos como SYSKM 
+Inicia sesión en la instancia de la base de datos como SYSDBA O SYSKM 
 
 ```
 sqlplus sys/password as sysdba
+```
+```
+sqlplus sys/password as syskm
 ```
 puedes verificar tu usuario con el siguiente comando
 ```
@@ -90,8 +104,32 @@ OPCIONALMENTE puedes crear un Auto-login para evitar el acceso manual cada que q
 ADMINISTER KEY MANAGEMENT CREATE LOCAL AUTO_LOGIN KEYSTORE FROM KEYSTORE 'keystore_location' IDENTIFIED BY password;
 ```
 
-### Paso 4:Abre la keystore
+### Paso 5:Abre la keystore
+Verifica si esta abierta la keystore con el siguiente comando
+```
+SELECT STATUS FROM V$ENCRYPTION_WALLET;
+```
 ```
 ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY "password";
 ```
+```
+ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN 
+FORCE KEYSTORE 
+IDENTIFIED BY EXTERNAL STORE;
+```
+### Paso 6: Configura la clave de cifrado maestra TDE en el almacén de claves de software
+Para abrir un almacén de claves de software, debes de  usar la instrucción ADMINISTER KEY MANAGEMENT con la cláusula SET KEYSTORE OPEN en caso de que no este abierto.
+
+verifica si esta abierto con 
+```
+SELECT STATUS FROM V$ENCRYPTION_WALLET;
+```
+Ejecuta el siguiente comando para crear la clave de cifrado maestra
+```
+ADMINISTER KEY MANAGEMENT SET KEY 
+FORCE KEYSTORE
+IDENTIFIED BY keystore_password 
+WITH BACKUP USING 'emp_key_backup';
+```
+
 

@@ -1,4 +1,4 @@
-# Cifrado_transparente_ORACLE
+# Cifrado_transparente_ORACLE18c
 El cifrado de datos transparente (TDE) te permite cifrar datos confidenciales que almacena en tablas y espacios de tablas.
 Después de que los datos se cifran, estos datos se descifran de forma transparente para los usuarios o aplicaciones autorizados cuando acceden a estos datos. TDE ayuda a proteger los datos almacenados en los medios (también llamados datos en reposo) en caso de que se roben los medios de almacenamiento o el archivo de datos.
 

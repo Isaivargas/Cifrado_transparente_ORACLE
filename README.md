@@ -12,7 +12,7 @@ El cifrado de datos transparente de Oracle admite dos modos de cifrado: el cifra
 Debes definir una ubicación para ello en el archivo sqlnet.ora. Hay un almacén de claves por base de datos, y la base de datos localiza este almacén de claves comprobando la ubicación del almacén de claves que define en el archivo sqlnet.ora.
 ### Paso1: Crea un directorio para tu wallet en alguna parte de tu elección dentro del directorio de oracle (preferentemente en admin) y copia la ruta a ese directorio ya que esa ruta la ocuparas en el paso 2 .
 
-### Paso 2: Establece la ubicación del almacén de claves de software en el archivo sqlnet.ora
+### Paso 2: Establece la ubicación del almacén de claves de software en el archivo init.ora
 para configurar un almacén de claves de software, debes modificar el archivo sqlnet.ora. que se encuentra por default en el directório ORACLE_HOMEdb\admin,para poder encontrar la ruta del directório ORACLE_HOMEdb ejecuta los siguientes comandos en la terminal:
 #### Nota:Asegurate de que este directorio existe de antemano. Preferentemente, este directorio debe estar vacío.
 
